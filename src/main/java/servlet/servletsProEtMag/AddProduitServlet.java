@@ -69,7 +69,6 @@ public class AddProduitServlet extends HttpServlet {
                     out.print("Cet id est déjà pris");
                 }
             }
-
         } catch (NumberFormatException ex){
             response.setStatus(400);
             out.print("Votre id ou votre prix ne sont pas valides.");

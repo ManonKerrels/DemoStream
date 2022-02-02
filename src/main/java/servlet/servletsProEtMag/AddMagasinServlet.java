@@ -39,19 +39,17 @@ public class AddMagasinServlet extends HttpServlet {
 
                 if (service.insert(m)){
                     out.print(m+"ajouté !");
-                    //response.sendRedirect(request.getContextPath()+"/magall");
-                    request.getRequestDispatcher(request.getContextPath()+"/magall")
-                            .forward(request, response);
+                    response.sendRedirect(request.getContextPath()+"/magall");
                 } else{
                     response.setStatus(400);
                     out.print("Cet id est déjà pris");
                 }
             }
-
         } catch (NumberFormatException ex){
             response.setStatus(400);
             out.print("Votre id, votre code postal ou votre numéro ne sont pas valides.");
         }
+        out.close();
 
 
     }
