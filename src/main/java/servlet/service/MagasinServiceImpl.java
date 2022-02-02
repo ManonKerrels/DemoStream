@@ -2,8 +2,6 @@ package servlet.service;
 
 import servlet.exceptions.MagasinNotFoundException;
 import servlet.models.Magasin;
-import streams.exo.ProduitServiceImpl;
-import streams.exo.models.Produit;
 
 import java.util.ArrayList;
 import java.util.List;

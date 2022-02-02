@@ -10,6 +10,6 @@
     <a href="./ajout">Ajouter</a>
     <a href="./modifie">Modifier</a>
     <a href="<%= request.getContextPath()%>/magall">Liste magasins</a>
-    <a href="<%= request.getContextPath()%>/addmag">Ajouter un magasin</a>
+    <a href="<%= request.getContextPath()%>/jsp/magasin/add_magasin.jsp">Ajouter un magasin</a>
 </body>
 </html>

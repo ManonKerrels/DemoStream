@@ -22,6 +22,10 @@ public class Magasin {
         this.produitDispo = produitDispo;
     }
 
+    public Magasin() {
+
+    }
+
     public int getId() {return id;}
     public void setId(int id) {this.id = id;}
 

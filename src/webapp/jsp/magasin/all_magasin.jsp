@@ -10,3 +10,5 @@
         <%= m.getProduitDispo() %> </li>
     <% } %>
 </ul>
+
+<a href="<%= request.getContextPath()%>/jsp/magasin/add_magasin.jsp">Ajouter un magasin</a>
