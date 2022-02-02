@@ -1,16 +1,18 @@
-package streams.exo.models;
+package servlet.models;
 
 public class Magasin {
 
+    private int id;
     private String nom;
     private String rue;
     private String ville;
     private int codePostal;
-    private long numero;
+    private int numero;
     private float superficie;
     private int produitDispo;
 
-    public Magasin (String nom, String rue, String ville, int codePostal, long numero, float superficie, int produitDispo){
+    public Magasin (int id, String nom, String rue, String ville, int codePostal, int numero, float superficie, int produitDispo){
+        this.id = id;
         this.nom = nom;
         this.rue = rue;
         this.ville = ville;
@@ -20,6 +22,8 @@ public class Magasin {
         this.produitDispo = produitDispo;
     }
 
+    public int getId() {return id;}
+    public void setId(int id) {this.id = id;}
 
     public String getNom() {return nom;}
     public void setNom(String nom) {this.nom = nom;}
@@ -34,7 +38,7 @@ public class Magasin {
     public void setCodePostal(int codePostal) {this.codePostal = codePostal;}
 
     public long getNumero() {return numero;}
-    public void setNumero(long numero) {this.numero = numero;}
+    public void setNumero() {this.numero = numero;}
 
     public float getSuperficie() {return superficie;}
     public void setSuperficie(float superficie) {this.superficie = superficie;}
