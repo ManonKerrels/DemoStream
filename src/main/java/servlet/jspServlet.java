@@ -18,7 +18,7 @@ class jspServlet {
 //class JspServlet{
 //
 //    void service(request, response){
-//        PrintWriter out = ...;
+//        PrintWriter out = response.getWriter();
 //        out.print(1+1);
 //    }
 //}
@@ -46,10 +46,4 @@ class jspServlet {
 
 //on écrit en dehors du service, pour définir des méthodes et des variables
 
-//class JspServlet{
-//    int a = 5;
 //
-//    void service(request, response){
-//        PrintWriter out = ...;
-//    }
-//}
