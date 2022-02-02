@@ -20,8 +20,8 @@ public class MagasinServiceImpl implements MagasinService{
     }
 
     public MagasinServiceImpl() {
-        liste.add(new Magasin(1, "La Caféière", "rue Longdoz", "Liège", 4020, 33, 120, 12));
-        liste.add(new Magasin(2, "Chez Licour", "rue Saint-Gilles", "Liège", 4000, 230, 50, 25));
+        liste.add(new Magasin(1, "La Caféière", "rue Longdoz", "Liège", 4020, 33, 120));
+        liste.add(new Magasin(2, "Chez Licour", "rue Saint-Gilles", "Liège", 4000, 230, 50));
     }
 
     public List<Magasin> getAll() {

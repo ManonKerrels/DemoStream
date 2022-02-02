@@ -6,8 +6,7 @@
 <h1> Liste des magasins </h1>
 <ul>
     <% for(Magasin m : liste){ %>
-        <li> <%= m.toString() %>
-        <%= m.getProduitDispo() %> </li>
+        <li> <%= m.toString() %> </li>
     <% } %>
 </ul>
 

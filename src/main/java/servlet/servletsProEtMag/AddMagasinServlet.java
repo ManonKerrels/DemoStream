@@ -13,7 +13,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "AddMagasinServlet", value = "/addmag")
 public class AddMagasinServlet extends HttpServlet {
 
-    private final MagasinService service = MagasinServiceImpl.getInstance();
+    private final MagasinService magasinService = MagasinServiceImpl.getInstance();
 
 //    @Override
 //    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -29,15 +29,17 @@ public class AddMagasinServlet extends HttpServlet {
             String nom = request.getParameter("nom");
             String rue = request.getParameter("rue");
             String ville = request.getParameter("ville");
-            int codePostal = Integer.parseInt(request.getParameter("codePostal"));
+            int codePostal = Integer.parseInt(request.getParameter("cp"));
             int numero = Integer.parseInt(request.getParameter("numero"));
-            float superficie = Float.parseFloat(request.getParameter("superficie"));
-            int produitDispo = Integer.parseInt(request.getParameter("produitDispo"));
+            double superficie = Double.parseDouble(request.getParameter("superficie"));
 
             if (nom == null || nom.isBlank() || rue == null || rue.isBlank() || ville == null || ville.isBlank()){
-                Magasin m = new Magasin(id, nom, rue, ville, codePostal, numero, superficie, produitDispo);
+                response.setStatus(400);
+                out.print("Le nom, la rue ou la ville ne sont pas définis.");
+            } else {
+                Magasin m = new Magasin(id, nom, rue, ville, codePostal, numero, superficie);
 
-                if (service.insert(m)){
+                if (magasinService.insert(m)){
                     out.print(m+"ajouté !");
                     response.sendRedirect(request.getContextPath()+"/magall");
                 } else{

@@ -8,10 +8,9 @@ public class Magasin {
     private String ville;
     private int codePostal;
     private int numero;
-    private float superficie;
-    private int produitDispo;
+    private double superficie;
 
-    public Magasin (int id, String nom, String rue, String ville, int codePostal, int numero, float superficie, int produitDispo){
+    public Magasin (int id, String nom, String rue, String ville, int codePostal, int numero, double superficie){
         this.id = id;
         this.nom = nom;
         this.rue = rue;
@@ -19,7 +18,6 @@ public class Magasin {
         this.codePostal = codePostal;
         this.numero = numero;
         this.superficie = superficie;
-        this.produitDispo = produitDispo;
     }
 
     public Magasin() {
@@ -44,11 +42,9 @@ public class Magasin {
     public long getNumero() {return numero;}
     public void setNumero() {this.numero = numero;}
 
-    public float getSuperficie() {return superficie;}
-    public void setSuperficie(float superficie) {this.superficie = superficie;}
+    public double getSuperficie() {return superficie;}
+    public void setSuperficie(double superficie) {this.superficie = superficie;}
 
-    public int getProduitDispo() {return produitDispo;}
-    public void setProduitDispo(int produitDispo) {this.produitDispo = produitDispo;}
 
     @Override
     public String toString() {
@@ -60,7 +56,6 @@ public class Magasin {
                 ", codePostal=" + codePostal +
                 ", numero=" + numero +
                 ", superficie=" + superficie +
-                ", produitDispo=" + produitDispo +
                 '}';
     }
 }
