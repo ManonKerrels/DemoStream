@@ -1,8 +1,8 @@
-package servlet;
+package servlet.servletsProEtMag;
 
-import streams.exo.models.Produit;
 import streams.exo.ProduitService;
 import streams.exo.ProduitServiceImpl;
+import streams.exo.models.ProduitForm;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -10,13 +10,14 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "AddProduitServlet", value = "/ajout")
-public class AddProduitServlet extends HttpServlet {
+@WebServlet(name = "Servlet", value = "/modifie")
+public class ModifieServlet extends HttpServlet {
 
     private final ProduitService service = ProduitServiceImpl.getInstance();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        response.setContentType("text/html");
         PrintWriter out = response.getWriter();
         out.print("<!doctype html>\n" +
                 "<html lang=\"en\">\n" +
@@ -29,12 +30,11 @@ public class AddProduitServlet extends HttpServlet {
                 "</head>\n" +
                 "<body>\n" +
                 "\n" +
-                "    <form action=\""+request.getContextPath()+"/ajout\" method=\"post\">\n" +
-                "        <input type=\"text\" name=\"id\" placeholder=\"id\"><br>\n" +
+                "    <form action=\""+request.getContextPath()+"/modifie\" method=\"post\">\n" +
+                "        <input type=\"number\" name=\"id\" placeholder=\"id\"><br>\n" +
                 "        <input type=\"text\" name=\"nom\" placeholder=\"nom\"><br>\n" +
-                "        <input type=\"text\" name=\"marque\" placeholder=\"marque\"><br>\n" +
                 "        <input type=\"number\" name=\"prix\" placeholder=\"prix\"><br>\n" +
-                "        <button type=\"submit\">envoyer</button>\n" +
+                "        <button type=\"submit\">modifier</button>\n" +
                 "    </form>\n" +
                 "\n" +
                 "</body>\n" +
@@ -46,35 +46,29 @@ public class AddProduitServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         PrintWriter out = response.getWriter();
 
-        try{
+
+        try {
             int id = Integer.parseInt(request.getParameter("id"));
             String nom = request.getParameter("nom");
-            String marque = request.getParameter("marque");
             double prix = Double.parseDouble(request.getParameter("prix"));
 
-            if (nom == null || nom.isBlank() || marque == null || marque.isBlank()){
+            if (nom == null || nom.isBlank()){
                 response.setStatus(400);
-                out.print("Votre marque ou votre nom ne sont pas définis.");
-            } else {
-                Produit p = new Produit(id, nom, marque, prix);
-                if (service.insert(p)){
-//                    response.setStatus(300); //ligne pas nécessaire (juste parce qu'on l'a fait partout ailleurs)
-                    out.print(p +"\t\tajouté !");
-                    response.sendRedirect(request.getContextPath()+"/produit");
-//                    idem que ce qu'il y a au-dessus
-//                    request.getRequestDispatcher(request.getContextPath()+"/produit")
-//                            .forward(request, response);
-                } else {
-                    response.setStatus(400);
-                    out.print("Cet id est déjà pris");
-                }
+                out.print("Votre nom n'est pas défini.");
+            } else if(service.getOne(id) == null){
+                response.setStatus(400);
+                out.print("Votre id ne fait pas partie de la liste.");
+            } else{
+                ProduitForm form = new ProduitForm(nom, prix);
+                service.update(id, form);
+                out.print("Produit modifié !");
+                response.sendRedirect(request.getContextPath()+"/produit");
             }
 
         } catch (NumberFormatException ex){
             response.setStatus(400);
-            out.print("Votre id ou votre prix ne sont pas valides.");
+            out.print("Id ou prix invalide(s).");
         }
-
 
     }
 }

@@ -14,6 +14,11 @@ public class Produit{
         this.prix = prix;
     }
 
+    public Produit(int id_magasin, Produit produit) {
+        this.id = id_magasin;
+        this.nom = String.valueOf(produit);
+    }
+
     public int getId() {return id;}
 
     public void setId(int id) {this.id = id;}

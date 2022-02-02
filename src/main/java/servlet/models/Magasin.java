@@ -45,4 +45,18 @@ public class Magasin {
 
     public int getProduitDispo() {return produitDispo;}
     public void setProduitDispo(int produitDispo) {this.produitDispo = produitDispo;}
+
+    @Override
+    public String toString() {
+        return "Magasin{" +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
+                ", rue='" + rue + '\'' +
+                ", ville='" + ville + '\'' +
+                ", codePostal=" + codePostal +
+                ", numero=" + numero +
+                ", superficie=" + superficie +
+                ", produitDispo=" + produitDispo +
+                '}';
+    }
 }

@@ -9,5 +9,7 @@
     <a href="./produit">Get all</a>
     <a href="./ajout">Ajouter</a>
     <a href="./modifie">Modifier</a>
+    <a href="<%= request.getContextPath()%>/magall">Liste magasins</a>
+    <a href="<%= request.getContextPath()%>/addmag">Ajouter un magasin</a>
 </body>
 </html>

@@ -1,4 +1,4 @@
-package servlet;
+package servlet.servletsProEtMag;
 
 import javax.servlet.*;
 import javax.servlet.http.*;

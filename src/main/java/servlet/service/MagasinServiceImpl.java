@@ -2,6 +2,7 @@ package servlet.service;
 
 import servlet.exceptions.MagasinNotFoundException;
 import servlet.models.Magasin;
+import streams.exo.ProduitServiceImpl;
 import streams.exo.models.Produit;
 
 import java.util.ArrayList;
@@ -55,8 +56,9 @@ public class MagasinServiceImpl implements MagasinService{
 
     //renvoie faux si le produit n'est pas ajouté
 //    boolean addProduit(int id_magasin, Produit produit) {
-//        Produit p = getOne(id_magasin);
-//        return false;
+//        Produit pr = new Produit(id_magasin, produit);
+//        boolean result = false;
+//        if ()
 //    }
 
 }

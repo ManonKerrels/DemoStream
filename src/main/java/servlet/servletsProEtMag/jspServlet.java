@@ -1,6 +1,5 @@
-package servlet;
+package servlet.servletsProEtMag;
 
-import java.io.PrintWriter;
 // Traduction en java du JSP
 // du texte html :
 

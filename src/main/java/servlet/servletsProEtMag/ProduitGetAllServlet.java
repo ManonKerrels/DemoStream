@@ -1,4 +1,4 @@
-package servlet;
+package servlet.servletsProEtMag;
 
 import streams.exo.models.Produit;
 import streams.exo.ProduitService;
