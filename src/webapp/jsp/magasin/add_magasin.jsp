@@ -1,6 +1,6 @@
 <%@ page import = "servlet.models.Magasin" %>
 
-<h1>Ajout magasin à la liste</h1>
+<h1>Ajouter un magasin à la liste</h1>
 
 <p>
     <form action= "<%=request.getContextPath()%>/addmag" method="post">

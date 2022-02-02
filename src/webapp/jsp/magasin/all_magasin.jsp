@@ -11,3 +11,5 @@
 </ul>
 
 <a href="<%= request.getContextPath()%>/jsp/magasin/add_magasin.jsp">Ajouter un magasin</a>
+<a href="<%= request.getContextPath()%>/jsp/magasin/delete_magasin.jsp">Supprimer un magasin</a>
+<a href="<%= request.getContextPath()%>/jsp/magasin/getone_magasin.jsp">Chercher un magasin</a>
