@@ -5,12 +5,14 @@ import streams.exo.ProduitServiceImpl;
 import streams.exo.models.Produit;
 
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
 
+//@WebServlet(name = "ProduitGetAllServlet", value = "/produit")
 public class ProduitGetAllBisServlet extends HttpServlet {
 
     private final ProduitService service = ProduitServiceImpl.getInstance();

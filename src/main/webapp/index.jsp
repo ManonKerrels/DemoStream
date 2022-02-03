@@ -8,12 +8,10 @@
 <body>
     <h1>Page d'accueil</h1>
 
+<ul>
+    <li> <a href="./produit">Liste des produits</a> </li>
+    <li> <a href="<%= request.getContextPath()%>/magall">Liste des magasins</a> </li>
+</ul>
 
-    <a href="./produit">Get all</a>
-    <a href="./ajout">Ajouter</a>
-    <a href="./modifie">Modifier</a>
-    <a href="<%= request.getContextPath()%>/magall">Liste magasins</a>
-    <a href="<%= request.getContextPath()%>/jsp/magasin/add_magasin.jsp">Ajouter un magasin</a>
-    <a href="<%= request.getContextPath()%>/jsp/magasin/one_magasin.jsp">Trouver un magasin</a>
 </body>
 </html>

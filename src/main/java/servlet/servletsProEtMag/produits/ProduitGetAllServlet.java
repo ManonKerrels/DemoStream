@@ -52,11 +52,15 @@ public class ProduitGetAllServlet extends HttpServlet {
         }
         );
 
-        out.print("</ul>\n" +
-                        "  \n" +
-                        "  </body>\n" +
-                        "  </html>"
-        );
+        out.print("" +
+                "<ul>\n" +
+                "    <li> <a href=\"./ajout\">Ajouter un produit</a> </li>\n" +
+                "    <li> <a href=\"./modifie\">Modifier un produit</a> </li>\n" +
+                "    <li> <a href=\"./index.jsp\">Accueil</a> </li>\n" +
+                "</ul>\n" +
+                "\n" +
+                "</body>\n" +
+                "</html>");
 
     }
 

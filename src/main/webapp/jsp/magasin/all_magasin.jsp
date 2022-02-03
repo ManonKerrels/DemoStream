@@ -10,6 +10,9 @@
     <% } %>
 </ul>
 
-<a href="<%= request.getContextPath()%>/jsp/magasin/add_magasin.jsp">Ajouter un magasin</a>
-<a href="<%= request.getContextPath()%>/jsp/magasin/delete_magasin.jsp">Supprimer un magasin</a>
-<a href="<%= request.getContextPath()%>/jsp/magasin/getone_magasin.jsp">Chercher un magasin</a>
+<ul>
+    <li> <a href="<%= request.getContextPath()%>/jsp/magasin/add_magasin.jsp">Ajouter un magasin</a> </li>
+    <li> <a href="<%= request.getContextPath()%>/jsp/magasin/delete_magasin.jsp">Supprimer un magasin</a> </li>
+    <li> <a href="<%= request.getContextPath()%>/jsp/magasin/one_magasin.jsp">Chercher un magasin</a> </li>
+    <li> <a href="./index.jsp">Accueil</a> </li>
+</ul>
