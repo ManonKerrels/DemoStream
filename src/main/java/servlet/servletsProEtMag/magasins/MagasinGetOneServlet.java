@@ -27,7 +27,8 @@ public class MagasinGetOneServlet extends HttpServlet {
                 response.setStatus(400);
                 out.print("Veuillez encoder un id.");
             } else{
-                out.println(m.toString()); ;
+                request.setAttribute("m", m);
+                request.getRequestDispatcher("/jsp/magasin/affiche_magasin.jsp").forward(request, response);
             }
 
         }catch (NumberFormatException ex){
