@@ -6,5 +6,5 @@ public class Marque {
     private String nom;
     private String stockName; //action en bourse
 
-    
+
 }
